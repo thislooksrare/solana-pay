@@ -14,3 +14,5 @@ export const MAINNET_ENDPOINT = 'https://solana-mainnet.phantom.tech';
 export const DEVNET_DUMMY_MINT = new PublicKey('Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr');
 
 export const MAINNET_USDC_MINT = new PublicKey('EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v');
+
+export const MAINNET_LOVE_MINT = new PublicKey('2hUCytKiWaqQcu2LhL9dYAfeKSET5G5kF7jiDi78VwxJ');
