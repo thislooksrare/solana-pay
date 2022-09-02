@@ -14,6 +14,8 @@ import { ThemeProvider } from '../contexts/ThemeProvider';
 import { TransactionsProvider } from '../contexts/TransactionsProvider';
 import { SolanaPayLogo } from '../images/SolanaPayLogo';
 import { SOLIcon } from '../images/SOLIcon';
+import { MAINNET_ENDPOINT, MAINNET_LOVE_MINT } from '../../utils/constants';
+import { LOVEIcon } from '../images/LOVEIcon';
 import css from './App.module.css';
 
 interface AppProps extends NextAppProps {
@@ -65,7 +67,7 @@ const App: FC<AppProps> & { getInitialProps(appContext: AppContext): Promise<App
         <ThemeProvider>
             <FullscreenProvider>
                 {recipient && label ? (
-                    <ConnectionProvider endpoint={DEVNET_ENDPOINT}>
+                    <ConnectionProvider endpoint={MAINNET_ENDPOINT }>
                         <WalletProvider wallets={wallets} autoConnect={connectWallet}>
                             <WalletModalProvider>
                                 <ConfigProvider
@@ -74,10 +76,11 @@ const App: FC<AppProps> & { getInitialProps(appContext: AppContext): Promise<App
                                     recipient={recipient}
                                     label={label}
                                     message={message}
-                                    symbol="SOL"
-                                    icon={<SOLIcon />}
-                                    decimals={9}
-                                    minDecimals={1}
+                                    splToken={MAINNET_LOVE_MINT}
+                                    symbol="LOVE"
+                                    icon={<LOVEIcon />}
+                                    decimals={6}
+                                    minDecimals={2}
                                     connectWallet={connectWallet}
                                 >
                                     <TransactionsProvider>
